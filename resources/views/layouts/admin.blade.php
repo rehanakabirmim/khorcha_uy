@@ -84,6 +84,7 @@
             </div>
         </div>
     </footer>
+    <script src="{{asset('contents/admin')}}/js/jquery-3.6.0.min.js"></script>
     <script src="{{asset('contents/admin')}}/js/bootstrap.bundle.min.js"></script>
     <script src="{{asset('contents/admin')}}/js/custom.js"></script>
   </body>
