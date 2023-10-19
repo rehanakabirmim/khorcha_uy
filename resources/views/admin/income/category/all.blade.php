@@ -36,7 +36,7 @@
                 <div class="btn-group btn_group_manage" role="group">
                   <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="view-user.html">View</a></li>
+                    <li><a class="dropdown-item" href="{{url('/dashboard/income/category/view/' .$data->incate_slug)}}">View</a></li>
                     <li><a class="dropdown-item" href="edit-user.html">Edit</a></li>
                     <li><a class="dropdown-item" href="#">Delete</a></li>
                   </ul>

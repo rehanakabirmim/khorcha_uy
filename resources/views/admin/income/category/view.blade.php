@@ -8,10 +8,10 @@
       <div class="card-header">
         <div class="row">
           <div class="col-md-8 card_title_part">
-            <i class="fab fa-gg-circle"></i>View User Information
+            <i class="fab fa-gg-circle"></i>View IncomeCategory Information
           </div>
           <div class="col-md-4 card_button_part">
-            <a href="{{url('dashboard/user')}}" class="btn btn-sm btn-dark"><i class="fas fa-th"></i>All User</a>
+            <a href="{{url('/dashboard/income/category')}}" class="btn btn-sm btn-dark"><i class="fas fa-th"></i>All Category</a>
           </div>
         </div>
       </div>
@@ -21,37 +21,30 @@
           <div class="col-md-8">
             <table class="table table-bordered table-striped table-hover custom_view_table">
               <tr>
-                <td>Name</td>
+                <td> Category Name</td>
                 <td>:</td>
-                <td>Saidul Islam Uzzal</td>
+                <td>{{$data->incate_name}}</td>
               </tr>
               <tr>
-                <td>Phone</td>
+                <td>Remarks</td>
                 <td>:</td>
-                <td>01710726035</td>
+                <td>{{$data->incate_remarks}}</td>
               </tr>
               <tr>
-                <td>Email</td>
+                <td>Creator</td>
                 <td>:</td>
-                <td>uzzalbd.creative</td>
+                <td>{{$data->creatorInfo->name}}</td>
               </tr>
               <tr>
-                <td>Username</td>
+                <td>Created Time</td>
                 <td>:</td>
-                <td>uzzalbd</td>
+                <td>{{$data->created_at->format('d-m-Y | h:i:s A')}}</td>
+                <!-- <td>{{$data->created_at->diffForHumans()}}</td> -->
+
               </tr>
-              <tr>
-                <td>Role</td>
-                <td>:</td>
-                <td>---</td>
-              </tr>
-              <tr>
-                <td>Photo</td>
-                <td>:</td>
-                <td>
-                  <img class="img200" src="{{asset('contents/admin')}}/images/avatar.jpg" alt="" />
-                </td>
-              </tr>
+             
+              
+             
             </table>
           </div>
           <div class="col-md-2"></div>

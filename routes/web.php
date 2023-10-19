@@ -52,7 +52,7 @@ Route::post('/dashboard/income/delete',[IncomeController::class,'delete']);
 Route::get('/dashboard/income/category',[IncomeCategoryController::class,'index']);
 Route::get('/dashboard/income/category/add',[IncomeCategoryController::class,'add']);
 Route::get('/dashboard/income/category/edit',[IncomeCategoryController::class,'edit']);
-Route::get('/dashboard/income/category/view',[IncomeCategoryController::class,'view']);
+Route::get('/dashboard/income/category/view/{slug}',[IncomeCategoryController::class,'view']);
 Route::post('/dashboard/income/category/insert',[IncomeCategoryController::class,'insert']);
 Route::post('/dashboard/income/category/update',[IncomeCategoryController::class,'update']);
 Route::post('/dashboard/income/category/softdelete',[IncomeCategoryController::class,'softdelete']);

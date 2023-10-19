@@ -33,9 +33,12 @@ class IncomeCategoryController extends Controller
         return view('admin.income.category.edit');
     }
 
-    public function view()
+    public function view($slug)
+
     {
-        return view('admin.income.category.view');
+        $data=IncomeCategory::where('incate_status',1)->where('incate_slug',$slug)->firstOrFail();
+
+        return view('admin.income.category.view',compact('data'));
     }
     public function insert(Request $request)
     {
