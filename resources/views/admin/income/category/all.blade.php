@@ -17,6 +17,22 @@
         </div>
       </div>
       <div class="card-body">
+      <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            @if (Session::has('success'))
+                            <div class="alert alert-success alert_success" role="alert">
+                                <strong>Success!</strong> {{ Session::get('success') }}
+                            </div>
+                            @endif
+                            @if (Session::has('error'))
+                            <div class="alert alert-danger alert_error" role="alert">
+                                <strong>Opps!</strong> {{ Session::get('error') }}
+                            </div>
+                            @endif
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
         <table class="table table-bordered table-striped table-hover custom_table">
           <thead class="table-dark">
             <tr>
@@ -37,7 +53,8 @@
                   <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{{url('/dashboard/income/category/view/' .$data->incate_slug)}}">View</a></li>
-                    <li><a class="dropdown-item" href="edit-user.html">Edit</a></li>
+                    <li><a class="dropdown-item" href="{{url('/dashboard/income/category/edit/' .$data->incate_slug)}}">Edit</a></li>
+                   
                     <li><a class="dropdown-item" href="#">Delete</a></li>
                   </ul>
                 </div>

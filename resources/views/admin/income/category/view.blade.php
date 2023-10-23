@@ -17,6 +17,22 @@
       </div>
       <div class="card-body">
         <div class="row">
+        
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            @if (Session::has('success'))
+                            <div class="alert alert-success alert_success" role="alert">
+                                <strong>Success!</strong> {{ Session::get('success') }}
+                            </div>
+                            @endif
+                            @if (Session::has('error'))
+                            <div class="alert alert-danger alert_error" role="alert">
+                                <strong>Opps!</strong> {{ Session::get('error') }}
+                            </div>
+                            @endif
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
           <div class="col-md-2"></div>
           <div class="col-md-8">
             <table class="table table-bordered table-striped table-hover custom_view_table">
@@ -42,7 +58,22 @@
                 <!-- <td>{{$data->created_at->diffForHumans()}}</td> -->
 
               </tr>
-             
+              @if($data->incate_editor !='')
+              <tr>
+                <td>Editor</td>
+                <td>:</td>
+                <td>{{$data->editorInfo->name}}</td>
+              </tr>
+              @endif
+              @if($data->	updated_at !='')
+              <tr>
+                <td>Updated Time</td>
+                <td>:</td>
+                <td>{{$data->updated_at->format('d-m-Y | h:i:s A')}}</td>
+                <!-- <td>{{$data->created_at->diffForHumans()}}</td> -->
+
+              </tr>
+              @endif
               
              
             </table>
