@@ -56,7 +56,7 @@ Route::get('/dashboard/income/category/view/{slug}',[IncomeCategoryController::c
 Route::post('/dashboard/income/category/insert',[IncomeCategoryController::class,'insert']);
 Route::post('/dashboard/income/category/update',[IncomeCategoryController::class,'update']);
 // Route::get('/dashboard/income/category/softdelete/{id}',[IncomeCategoryController::class,'softdelete']);//without using modal softdelete
-// Route::post('/dashboard/income/category/softdelete',[IncomeCategoryController::class,'softdelete']);
+Route::post('/dashboard/income/category/softdelete',[IncomeCategoryController::class,'softdelete']);
 Route::post('/dashboard/income/category/restore',[IncomeCategoryController::class,'restore']);
 Route::post('/dashboard/income/category/delete',[IncomeCategoryController::class,'delete']);
 

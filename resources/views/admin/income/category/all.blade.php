@@ -54,9 +54,10 @@
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{{url('/dashboard/income/category/view/' .$data->incate_slug)}}">View</a></li>
                     <li><a class="dropdown-item" href="{{url('/dashboard/income/category/edit/' .$data->incate_slug)}}">Edit</a></li>
-                    <!-- <li><a class="dropdown-item" href="{{url('/dashboard/income/category/softdelete/' .$data->incate_id)}}">Delete</a></li>without using modal softdelete
-                    -->
-                    <li><a class="dropdown-item" href="#">Delete</a></li>
+                    <!-- <li><a class="dropdown-item" href="{{url('/dashboard/income/category/softdelete/' .$data->incate_id)}}">Delete</a></li> //without using modal softdelete -->
+                   
+                    <li><a class="dropdown-item" href="#" id='modal' data-bs-toggle="modal" data-bs-target="#softDeleteModal" 
+                    data-id="{{$data->incate_id}}">Delete</a></li>
                   </ul>
                 </div>
               </td>
@@ -74,6 +75,30 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- delete modal code for soft delete -->
+<div class="modal fade" id="softDeleteModal" tabindex="-1" aria-labelledby="softDeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form action="{{url('dashboard/income/category/softdelete')}}" method="post">
+      @csrf
+      <div class="modal-content modal_content">
+        <div class="modal-header modal_header">
+          <h5 class="modal-title modal_title" id="softDeleteModalLabel"><i class="fab fa-gg-circle"></i> Confirm Message</h5>
+        
+        </div>
+        <div class="modal-body modal_body">
+          Are you want to sure delete data?
+          
+        </div>
+        <div class="modal-footer modal_footer">
+          
+          <button type="submit" class="btn btn-success">Confirm</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+  </form>
   </div>
 </div>
 
