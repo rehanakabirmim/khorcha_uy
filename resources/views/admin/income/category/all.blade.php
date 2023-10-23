@@ -54,7 +54,8 @@
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{{url('/dashboard/income/category/view/' .$data->incate_slug)}}">View</a></li>
                     <li><a class="dropdown-item" href="{{url('/dashboard/income/category/edit/' .$data->incate_slug)}}">Edit</a></li>
-                   
+                    <!-- <li><a class="dropdown-item" href="{{url('/dashboard/income/category/softdelete/' .$data->incate_id)}}">Delete</a></li>without using modal softdelete
+                    -->
                     <li><a class="dropdown-item" href="#">Delete</a></li>
                   </ul>
                 </div>

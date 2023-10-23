@@ -106,8 +106,22 @@ class IncomeCategoryController extends Controller
             return redirect('dashboard/income/category/edit/' .$slug);
         }
     }
-    public function softdelete()
+    public function softdelete($id)
     {
+        $soft=IncomeCategory::where('incate_status',1)->where('incate_id',$id)->update([
+            'incate_status'=>0,
+            'updated_at' => Carbon::now()->toDateTimeString(),
+
+
+        ]);
+        if ($soft) {
+            Session::flash('success', 'Successfully delete income category information.');
+            return redirect('dashboard/income/category/');
+        } else {
+            Session::flash('error', 'Opps! operation failed.');
+            return redirect('dashboard/income/category/');
+        }
+
     }
     public function restore()
     {

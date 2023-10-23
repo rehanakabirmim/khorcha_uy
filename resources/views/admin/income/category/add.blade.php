@@ -3,7 +3,7 @@
 @section('main-content')
 <div class="row">
     <div class="col-md-12 ">
-        <form method="post" action="{{ url('dashboard/income/category/submit') }}">
+        <form method="post" action="{{ url('dashboard/income/category/insert') }}">
             @csrf
             <div class="card mb-3">
                 <div class="card-header">
