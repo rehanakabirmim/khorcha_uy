@@ -55,9 +55,8 @@
                     <li><a class="dropdown-item" href="{{url('/dashboard/income/category/view/' .$data->incate_slug)}}">View</a></li>
                     <li><a class="dropdown-item" href="{{url('/dashboard/income/category/edit/' .$data->incate_slug)}}">Edit</a></li>
                     <!-- <li><a class="dropdown-item" href="{{url('/dashboard/income/category/softdelete/' .$data->incate_id)}}">Delete</a></li> //without using modal softdelete -->
-                   
-                    <li><a class="dropdown-item" href="#" id='modal' data-bs-toggle="modal" data-bs-target="#softDeleteModal" 
-                    data-id="{{$data->incate_id}}">Delete</a></li>
+                    <li><a class="dropdown-item" href="#" id="softDelete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{$data->incate_id}}">Delete</a></li>
+                    
                   </ul>
                 </div>
               </td>
@@ -90,7 +89,7 @@
         </div>
         <div class="modal-body modal_body">
           Are you want to sure delete data?
-          
+          <input type ="hidden" name="modal_id" id="modal_id" />
         </div>
         <div class="modal-footer modal_footer">
           

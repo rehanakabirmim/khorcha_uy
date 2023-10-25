@@ -106,8 +106,9 @@ class IncomeCategoryController extends Controller
             return redirect('dashboard/income/category/edit/' .$slug);
         }
     }
-    public function softdelete($id)
+    public function softdelete()
     {
+        $id=$_POST['modal_id'];
         $soft=IncomeCategory::where('incate_status',1)->where('incate_id',$id)->update([
             'incate_status'=>0,
             'updated_at' => Carbon::now()->toDateTimeString(),
