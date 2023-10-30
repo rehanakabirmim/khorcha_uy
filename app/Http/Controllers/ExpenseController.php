@@ -11,10 +11,12 @@ class ExpenseController extends Controller
         $this->middleware('auth');
     }
     public function index(){
+        
 
     }
 
     public function add(){
+        
 
     }
     public function edit(){

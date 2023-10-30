@@ -7,6 +7,9 @@ use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\IncomeCategoryController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\ExpenseCategoryController;
+
+use Illuminate\Http\Request\ReportController;
+use App\Http\Controllers\RecycleController ;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,8 +43,8 @@ Route::post('/dashboard/user/delete',[UserController::class,'delete']);
 //Income 
 Route::get('/dashboard/income',[IncomeController::class,'index']);
 Route::get('/dashboard/income/add',[IncomeController::class,'add']);
-Route::get('/dashboard/income/edit',[IncomeController::class,'edit']);
-Route::get('/dashboard/income/view',[IncomeController::class,'view']);
+Route::get('/dashboard/income/edit/{slug}',[IncomeController::class,'edit']);
+Route::get('/dashboard/income/view/{slug}',[IncomeController::class,'view']);
 Route::post('/dashboard/income/insert',[IncomeController::class,'insert']);
 Route::post('/dashboard/income/update',[IncomeController::class,'update']);
 Route::post('/dashboard/income/softdelete',[IncomeController::class,'softdelete']);
@@ -74,15 +77,22 @@ Route::post('/dashboard/expense/delete',[ExpenseController::class,'delete']);
 //ExpenseCategory
 Route::get('/dashboard/expense/category',[ExpenseCategoryController::class,'index']);
 Route::get('/dashboard/expense/category/add',[ExpenseCategoryController::class,'add']);
-Route::get('/dashboard/expense/category/edit',[ExpenseCategoryController::class,'edit']);
-Route::get('/dashboard/expense/category/view',[ExpenseCategoryController::class,'view']);
+Route::get('/dashboard/expense/category/edit/{slug}',[ExpenseCategoryController::class,'edit']);
+Route::get('/dashboard/expense/category/view/{slug}',[ExpenseCategoryController::class,'view']);
 Route::post('/dashboard/expense/category/insert',[ExpenseCategoryController::class,'insert']);
 Route::post('/dashboard/expense/category/update',[ExpenseCategoryController::class,'update']);
 Route::post('/dashboard/expense/category/softdelete',[ExpenseCategoryController::class,'softdelete']);
 Route::post('/dashboard/expense/category/restore',[ExpenseCategoryController::class,'restore']);
 Route::post('/dashboard/expense/category/delete',[ExpenseCategoryController::class,'delete']);
 
+//Report
+Route::get('/dashbaord/report',[ReportController::class,'index']);
 
+//RecycleBin
+Route::get('/dashbaord/recycle',[RecycleController::class,'index']);
+Route::get('/dashbaord/recycle/user',[RecycleController::class,'user']);
+Route::get('/dashbaord/recycle/income',[RecycleController::class,'income']);
+Route::get('/dashbaord/recycle/income/category',[RecycleController::class,'income_category']);
 
 
 

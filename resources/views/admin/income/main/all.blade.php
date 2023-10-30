@@ -1,15 +1,18 @@
 @extends('layouts.admin')
+
 @section('main-content')
-  <div class="row">
+
+
+<div class="row">
       <div class="col-md-12">
           <div class="card mb-3">
             <div class="card-header">
               <div class="row">
                   <div class="col-md-8 card_title_part">
-                      <i class="fab fa-gg-circle"></i>All Expense Category Information
+                      <i class="fab fa-gg-circle"></i>All Income Information
                   </div>
                   <div class="col-md-4 card_button_part">
-                      <a href="{{url('dashboard/expense/category/add')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i>Add Categroy</a>
+                      <a href="{{url('dashboard/income/add')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i>Add Income</a>
                   </div>
               </div>
             </div>
@@ -33,23 +36,27 @@
               <table id="alltableinfo" class="table table-bordered table-striped table-hover custom_table">
                 <thead class="table-dark">
                   <tr>
-                    <th>Name</th>
-                    <th>Remarks</th>
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Amount</th>
                     <th>Manage</th>
                   </tr>
                 </thead>
                 <tbody>
                   @foreach($all as $data)
                   <tr>
-                    <td>{{$data->expcat_name}}</td>
-                    <td>{{$data->expcat_remarks}}</td>
+                    <td>{{date('d-m-Y',strtotime($data->income_date))}}</td>
+                    <td>{{$data->income_title}}</td>
+                    <td>{{$data->categoryInfo->incate_name}}</td>
+                    <td>{{number_format($data->income_amount,2)}}</td>
                     <td>
                         <div class="btn-group btn_group_manage" role="group">
                           <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
                           <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{url('dashboard/expense/category/view/' .$data->expcat_slug)}}">View</a></li>
-                            <li><a class="dropdown-item" href="{{url('dashboard/expense/category/edit/'.$data->expcat_slug)}}">Edit</a></li>
-                            <li><a class="dropdown-item" href="#" id="softDelete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{$data->expcat_id}}">Delete</a></li>
+                            <li><a class="dropdown-item" href="{{url('dashboard/income/view/'.$data->income_slug)}}">View</a></li>
+                            <li><a class="dropdown-item" href="{{url('dashboard/income/edit/'.$data->income_slug)}}">Edit</a></li>
+                            <li><a class="dropdown-item" href="#" id="softDelete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{$data->income_id}}">Delete</a></li>
                           </ul>
                         </div>
                     </td>
@@ -71,7 +78,7 @@
   <!-- delete modal code-->
   <div class="modal fade" id="softDeleteModal" tabindex="-1" aria-labelledby="softDeleteModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <form method="post" action="{{url('dashboard/expense/category/softdelete')}}">
+    <form method="post" action="{{url('dashboard/income/softdelete')}}">
       @csrf
       <div class="modal-content modal_content">
         <div class="modal-header modal_header">

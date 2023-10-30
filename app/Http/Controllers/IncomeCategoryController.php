@@ -67,6 +67,7 @@ class IncomeCategoryController extends Controller
         ]);
 
         if ($insert) {
+            
             Session::flash('success', 'Successfully add income category information.');
             return redirect('dashboard/income/category/add');
         } else {
@@ -117,17 +118,42 @@ class IncomeCategoryController extends Controller
         ]);
         if ($soft) {
             Session::flash('success', 'Successfully delete income category information.');
-            return redirect('dashboard/income/category/');
+            return redirect('dashboard/income/category');
         } else {
             Session::flash('error', 'Opps! operation failed.');
-            return redirect('dashboard/income/category/');
+            return redirect('dashboard/income/category');
         }
 
     }
     public function restore()
     {
+        $id=$_POST['modal_id'];
+        $restore=IncomeCategory::where('incate_status',0)->where('incate_id',$id)->update([
+            'incate_status'=>1,
+            'updated_at' => Carbon::now()->toDateTimeString(),
+
+
+        ]);
+        if ($restore) {
+            Session::flash('success', 'Successfully restore income category information.');
+            return redirect('dashbaord/recycle/income/category');
+        } else {
+            Session::flash('error', 'Opps! operation failed.');
+            return redirect('dashbaord/recycle/income/category');
+        }
     }
     public function delete()
     {
+        $id=$_POST['modal_id'];
+        $delete=IncomeCategory::where('incate_status',0)->where('incate_id',$id)->delete([]);
+            
+        if ($delete) {
+            Session::flash('success', 'Successfully permanently delete income category information.');
+            return redirect('dashbaord/recycle/income/category');
+        } else {
+            Session::flash('error', 'Opps! operation failed.');
+            return redirect('dashbaord/recycle/income/category');
+        }   
     }
 }
+

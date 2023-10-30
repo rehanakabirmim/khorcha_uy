@@ -6,10 +6,10 @@
             <div class="card-header">
               <div class="row">
                   <div class="col-md-8 card_title_part">
-                      <i class="fab fa-gg-circle"></i>View Expense Category Information
+                      <i class="fab fa-gg-circle"></i>View Income Information
                   </div>
                   <div class="col-md-4 card_button_part">
-                      <a href="{{url('dashboard/expense/category')}}" class="btn btn-sm btn-dark"><i class="fas fa-th"></i>All Category</a>
+                      <a href="{{url('dashboard/income')}}" class="btn btn-sm btn-dark"><i class="fas fa-th"></i>All Category</a>
                   </div>
               </div>
             </div>
@@ -35,29 +35,39 @@
                   <div class="col-md-8">
                       <table class="table table-bordered table-striped table-hover custom_view_table">
                         <tr>
-                          <td>Expense Category</td>
+                          <td>Title</td>
                           <td>:</td>
-                          <td>{{$data->expcat_name}}</td>
+                          <td>{{$data->income_title}}</td>
                         </tr>
                         <tr>
-                          <td>Remarks</td>
+                          <td>Category</td>
                           <td>:</td>
-                          <td>{{$data->expcat_remarks}}</td>
+                          <td>{{$data->categoryInfo->incate_name}}</td>
+                        </tr>
+                        <tr>
+                          <td>Date</td>
+                          <td>:</td>
+                          <td>{{date('d-m-Y',strtotime($data->income_date))}}</td>
+                        </tr>
+                        <tr>
+                          <td>Amount</td>
+                          <td>:</td>
+                          <td>{{number_format($data->income_amount,2)}}</td>
                         </tr>
                         <tr>
                           <td>Creator Info</td>
                           <td>:</td>
                           <td>
-                            {{$data->creatorInfo->name}} <br>
+                            {{$data->creatorInfo->name}}<br>
                             {{$data->created_at->format('d-m-Y | h:i:s A')}}
                           </td>
                         </tr>
-                        @if($data->expcat_editor!='')
+                        @if($data->income_editor!='')
                         <tr>
                           <td>Editor Info</td>
                           <td>:</td>
                           <td>
-                            {{$data->editorInfo->name}} <br>
+                            {{$data->editorInfo->name}}<br>
                             {{$data->updated_at->format('d-m-Y | h:i:s A')}}
                           </td>
                         </tr>

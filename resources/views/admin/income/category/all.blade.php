@@ -33,16 +33,16 @@
                         </div>
                         <div class="col-md-2"></div>
                     </div>
-        <table class="table table-bordered table-striped table-hover custom_table">
-          <thead class="table-dark">
-            <tr>
-              <th>Name</th>
-              <th>Remarks</th>
-            
-              <th>Manage</th>
-            </tr>
-          </thead>
-          <tbody>
+                    <table id="alltableinfo" class="table table-bordered table-striped table-hover custom_table">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>Name</th>
+                      <th>Remarks</th>
+                    
+                      <th>Manage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
             @foreach($allData as $data)
             <tr>
               <td>{{$data->incate_name}}</td>
