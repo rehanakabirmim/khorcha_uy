@@ -93,8 +93,8 @@ Route::get('/dashbaord/recycle',[RecycleController::class,'index']);
 Route::get('/dashbaord/recycle/user',[RecycleController::class,'user']);
 Route::get('/dashbaord/recycle/income',[RecycleController::class,'income']);
 Route::get('/dashbaord/recycle/income/category',[RecycleController::class,'income_category']);
-// Route::get('/dashbaord/recycle/expense',[RecycleController::class,'expense']);
-// Route::get('/dashbaord/recycle/expense/category',[RecycleController::class,'expense_category']);
+Route::get('/dashbaord/recycle/expense',[RecycleController::class,'expense']);
+Route::get('/dashbaord/recycle/expense/category',[RecycleController::class,'expense_category']);
 
 
 

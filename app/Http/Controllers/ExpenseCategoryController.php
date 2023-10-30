@@ -123,10 +123,10 @@ class ExpenseCategoryController extends Controller
 
       if($restore){
         Session::flash('success','Successfully restore expense category information.');
-        return redirect('dashboard/recycle/expense/category');
+        return redirect('dashbaord/recycle/expense/category');
       }else{
         Session::flash('error','Opps! operation failed.');
-        return redirect('dashboard/recycle/expense/category');
+        return redirect('dashbaord/recycle/expense/category');
       }
 
     }
@@ -136,10 +136,10 @@ class ExpenseCategoryController extends Controller
   
         if($delete){
           Session::flash('success','Successfully permanently delete expense category information.');
-          return redirect('dashboard/recycle/expense/category');
+          return redirect('dashbaord/recycle/expense/category');
         }else{
           Session::flash('error','Opps! operation failed.');
-          return redirect('dashboard/recycle/expense/category');
+          return redirect('dashbaord/recycle/expense/category');
         }
         
     }
