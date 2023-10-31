@@ -103,7 +103,7 @@ $all=App\Models\ExpenseCategory::where('expcat_status',0)->orderBy('expcat_id','
 <!-- delete modal  -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <form action="{{url('dashbaord/expense/category/delete')}}" method="post">
+    <form action="{{url('dashboard/expense/category/delete')}}" method="post">
       @csrf
       <div class="modal-content modal_content">
         <div class="modal-header modal_header">

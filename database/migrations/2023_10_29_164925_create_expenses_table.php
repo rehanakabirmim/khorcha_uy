@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('expenses', function (Blueprint $table) {
             $table->bigIncrements('expense_id');
             $table->string('expense_title',100)->nullable();
-            $table->integer('expcate_id')->nullable();
+            $table->integer('expcat_id')->nullable();
             $table->string('expense_amount',10)->nullable();
             $table->string('expense_date',20)->nullable();
             $table->integer('expense_creator')->nullable();

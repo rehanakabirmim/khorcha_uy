@@ -66,8 +66,8 @@ Route::post('/dashboard/income/category/delete',[IncomeCategoryController::class
 //Expense
 Route::get('/dashboard/expense',[ExpenseController::class,'index']);
 Route::get('/dashboard/expense/add',[ExpenseController::class,'add']);
-Route::get('/dashboard/expense/edit',[ExpenseController::class,'edit']);
-Route::get('/dashboard/expense/view',[ExpenseController::class,'view']);
+Route::get('/dashboard/expense/edit/{slug}',[ExpenseController::class,'edit']);
+Route::get('/dashboard/expense/view/{slug}',[ExpenseController::class,'view']);
 Route::post('/dashboard/expense/insert',[ExpenseController::class,'insert']);
 Route::post('/dashboard/expense/update',[ExpenseController::class,'update']);
 Route::post('/dashboard/expense/softdelete',[ExpenseController::class,'softdelete']);
@@ -93,7 +93,7 @@ Route::get('/dashbaord/recycle',[RecycleController::class,'index']);
 Route::get('/dashbaord/recycle/user',[RecycleController::class,'user']);
 Route::get('/dashbaord/recycle/income',[RecycleController::class,'income']);
 Route::get('/dashbaord/recycle/income/category',[RecycleController::class,'income_category']);
-Route::get('/dashbaord/recycle/expense',[RecycleController::class,'expense']);
+Route::get('/dashboard/recycle/expense',[RecycleController::class,'expense']);
 Route::get('/dashbaord/recycle/expense/category',[RecycleController::class,'expense_category']);
 
 
