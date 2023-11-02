@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{{asset('contents/admin')}}/css/datatables.min.css">
     <link rel="stylesheet" href="{{asset('contents/admin')}}/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="{{asset('contents/admin')}}/css/style.css">
+
+    <script src="{{asset('contents/admin')}}/js/datatables.min.js"></script>
+   
   </head>
   <body>
     <header>
@@ -46,9 +49,12 @@
                     <div class="menu">
                         <ul>
                             <li><a href="{{url('dashboard')}}"><i class="fas fa-home"></i> Dashboard</a></li>
+                            @if(Auth::user()->role=='1')
                             <li><a href="{{url('dashboard/user')}}"><i class="fas fa-user-circle"></i> Users</a></li>
-                         
+                            @endif
+                            @if(Auth::user()->role<=3)
                             <li><a href="{{url('dashboard/income')}}"><i class="fas fa-wallet"></i> Income</a></li>
+                            @endif
                             <li><a href="{{url('dashboard/expense')}}"><i class="fas fa-coins"></i>Expense</a></li>
                             <li><a href="#"><i class="fas fa-file-alt"></i>Reports</a></li>
                             <li><a href="#"><i class="fas fa-trash"></i>Recycle Bin</a></li>
@@ -95,9 +101,13 @@
     <script src="{{asset('contents/admin')}}/js/jquery-3.6.0.min.js"></script>
     
     <script src="{{asset('contents/admin')}}/js/bootstrap.bundle.min.js"></script>
-    <script src="{{asset('contents/admin')}}/js/datatables.min.js"></script>
-    <script src="{{asset('contents/admin')}}/js/bootstrap-datepicker.js"></script>
     
+    <script src="{{asset('contents/admin')}}/js/bootstrap-datepicker.js"></script>
+ 
+
+
     <script src="{{asset('contents/admin')}}/js/custom.js"></script>
+
+   
   </body>
 </html>

@@ -14,9 +14,11 @@ class UserController extends Controller
 {
     public function  __construct(){
         $this->middleware('auth');
+        $this->middleware('superadmin');
     }
     public function index(){
-        return view('admin.user.all');
+      $all=User::where('status',1)->orderBy('id','DESC')->get();
+        return view('admin.user.all',compact('all'));
 
     }
 
@@ -36,7 +38,7 @@ class UserController extends Controller
           'name'=>'required|max:50',
           'email'=>'required|email|max:50|unique:users',
           'password'=>'required|min:8',
-          'confirm_password'=>'required',
+          'confirm_password'=>'required|min:8|same:password',
           'username'=>'required',
           'role'=>'required',
         ],[
