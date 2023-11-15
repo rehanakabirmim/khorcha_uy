@@ -26,6 +26,7 @@
                             <th>Email</th>
                             <th>Username</th>
                             <th>Role</th>
+                            <th>Photo</th>
                             <th>Manage</th>
                         </tr>
                     </thead>
@@ -36,14 +37,22 @@
                             <td>{{$data->phone}}</td>
                             <td>z{{$data->email}}</td>
                             <td>{{$data->username}}</td>
+                            <td>
+                                @if($data->photo!='')
+                                <img height="150" width="150"  src="{{asset('uploads/users/'.$data->photo)}}" alt="User Photo" />
+                                @else
+                                <img height="150" width="150" class="" src="{{asset('contents/admin')}}/images/avatar.png" alt="avatar"/>
+
+                                @endif
+                            </td>
                             <td>{{$data->roleInfo->role_name}}</td>
                             <td>
                                 <div class="btn-group btn_group_manage" role="group">
                                     <button type="button" class="btn btn-sm btn-dark dropdown-toggle"
                                         data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="{{url('dashboard/user/view')}}">View</a></li>
-                                        <li><a class="dropdown-item" href="{{url('dashboard/user/edit')}}l">Edit</a>
+                                        <li><a class="dropdown-item" href="{{url('dashboard/user/view/'.$data->slug)}}">View</a></li>
+                                        <li><a class="dropdown-item" href="{{url('dashboard/user/edit/'.$data->slug)}}">Edit</a>
                                         </li>
                                         <li><a class="dropdown-item" href="#">Delete</a></li>
                                     </ul>

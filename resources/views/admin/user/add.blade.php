@@ -115,7 +115,7 @@
                     <div class="row mb-3">
                       <label class="col-sm-3 col-form-label col_form_label">Photo:</label>
                       <div class="col-sm-4">
-                        <input type="file" class="form-control form_control" id="" name="">
+                        <input type="file" class="form-control form_control" id="" name="pic">
                       </div>
                     </div>
                 </div>
