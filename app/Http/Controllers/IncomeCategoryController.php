@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Session;
 use Auth;
 
+
 class IncomeCategoryController extends Controller
 {
     public function __construct()
@@ -34,7 +35,7 @@ class IncomeCategoryController extends Controller
 
         return view('admin.income.category.edit',compact('data'));
     }
-    
+
 
     public function view($slug)
 
@@ -67,7 +68,7 @@ class IncomeCategoryController extends Controller
         ]);
 
         if ($insert) {
-            
+
             Session::flash('success', 'Successfully add income category information.');
             return redirect('dashboard/income/category/add');
         } else {
@@ -87,7 +88,7 @@ class IncomeCategoryController extends Controller
                 'name.required' => 'Please enter income category name.',
             ],
         );
-        
+
         $slug = Str::slug($request['name'], '-');
         $editor = Auth::user()->id;
 
@@ -146,14 +147,15 @@ class IncomeCategoryController extends Controller
     {
         $id=$_POST['modal_id'];
         $delete=IncomeCategory::where('incate_status',0)->where('incate_id',$id)->delete([]);
-            
+
         if ($delete) {
             Session::flash('success', 'Successfully permanently delete income category information.');
             return redirect('dashbaord/recycle/income/category');
         } else {
             Session::flash('error', 'Opps! operation failed.');
             return redirect('dashbaord/recycle/income/category');
-        }   
+        }
     }
+
 }
 

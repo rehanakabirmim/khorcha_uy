@@ -8,6 +8,7 @@ use App\Models\Income;
 use Carbon\Carbon;
 use Session;
 use Auth;
+use PDF;
 
 class IncomeController extends Controller{
     public function __construct(){
@@ -146,5 +147,13 @@ class IncomeController extends Controller{
         Session::flash('error','Opps! operation failed.');
         return back();
       }
+    }
+    PUBLIC FUNCTION PDF(){
+        $all=Income::where('income_status',1)->orderBy('income_date','DESC')->get();
+
+        $pdf = PDF::loadView('admin.income.main.pdf' ,compact('all'));
+
+        return $pdf->download('income.pdf');
+
     }
 }
