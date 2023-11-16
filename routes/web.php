@@ -51,6 +51,7 @@ Route::post('/dashboard/income/softdelete',[IncomeController::class,'softdelete'
 Route::post('/dashboard/income/restore',[IncomeController::class,'restore']);
 Route::post('/dashboard/income/delete',[IncomeController::class,'delete']);
 Route::get('/dashboard/income/pdf',[IncomeController::class,'pdf']);
+Route::get('/dashboard/income/excel',[IncomeController::class,'excel']);
 
 //incomecategory
 Route::get('/dashboard/income/category',[IncomeCategoryController::class,'index']);

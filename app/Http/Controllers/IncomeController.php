@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Income;
+use App\Exports\IncomeExport;
 use Carbon\Carbon;
 use Session;
 use Auth;
 use PDF;
+use Excel;
 
 class IncomeController extends Controller{
     public function __construct(){
@@ -148,12 +150,17 @@ class IncomeController extends Controller{
         return back();
       }
     }
-    PUBLIC FUNCTION PDF(){
+    public function pdf(){
         $all=Income::where('income_status',1)->orderBy('income_date','DESC')->get();
 
         $pdf = PDF::loadView('admin.income.main.pdf' ,compact('all'));
 
-        return $pdf->download('income.pdf');
+        return $pdf->download('income_'.time().'.pdf');
 
+    }
+
+
+    public function excel(){
+        return Excel::download(new IncomeExport, 'income.xlsx');
     }
 }
