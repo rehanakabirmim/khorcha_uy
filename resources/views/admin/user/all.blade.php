@@ -54,7 +54,7 @@
                                         <li><a class="dropdown-item" href="{{url('dashboard/user/view/'.$data->slug)}}">View</a></li>
                                         <li><a class="dropdown-item" href="{{url('dashboard/user/edit/'.$data->slug)}}">Edit</a>
                                         </li>
-                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                        <li><a class="dropdown-item" href="#" id="softDelete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{$data->id}}">Delete</a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -75,5 +75,26 @@
         </div>
     </div>
 </div>
+<!-- delete modal code-->
+<div class="modal fade" id="softDeleteModal" tabindex="-1" aria-labelledby="softDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form method="post" action="{{url('dashboard/user/softdelete')}}">
+        @csrf
+        <div class="modal-content modal_content">
+          <div class="modal-header modal_header">
+            <h1 class="modal-title modal_title" id="softDeleteModalLabel"><i class="fab fa-gg-circle"></i> Confirm Message</h1>
+          </div>
+          <div class="modal-body modal_body">
+            Are you want to sure delete data?
+            <input type="hidden" name="modal_id" id="modal_id"/>
+          </div>
+          <div class="modal-footer modal_footer">
+            <button type="submit" class="btn btn-sm btn-success">Confirm</button>
+            <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 
 @endsection

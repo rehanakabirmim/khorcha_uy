@@ -7,8 +7,8 @@ use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\IncomeCategoryController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\ExpenseCategoryController;
+use App\Http\Controllers\ReportController;
 
-use Illuminate\Http\Request\ReportController;
 use App\Http\Controllers\RecycleController ;
 use Illuminate\Support\Facades\Route;
 
@@ -89,6 +89,8 @@ Route::post('/dashboard/expense/category/delete',[ExpenseCategoryController::cla
 
 //Report
 Route::get('/dashbaord/report',[ReportController::class,'index']);
+Route::get('/dashbaord/report/summary',[ReportController::class,'summary']);
+Route::get('/dashbaord/report/current/month',[ReportController::class,'current_month']);
 
 //RecycleBin
 Route::get('/dashbaord/recycle',[RecycleController::class,'index']);
