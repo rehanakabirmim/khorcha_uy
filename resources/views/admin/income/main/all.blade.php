@@ -40,7 +40,7 @@
                     <th>Title</th>
                     <th>Category</th>
                     <th>Amount</th>
-                    <th>Manage</th>
+                    <th class="no_print">Manage</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -50,7 +50,8 @@
                     <td>{{$data->income_title}}</td>
                     <td>{{$data->categoryInfo->incate_name}}</td>
                     <td>{{number_format($data->income_amount,2)}}</td>
-                    <td>
+                    
+                    <td class="no_print">
                         <div class="btn-group btn_group_manage" role="group">
                           <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
                           <ul class="dropdown-menu">
@@ -65,7 +66,7 @@
                 </tbody>
               </table>
             </div>
-            <div class="card-footer">
+            <div class="card-footer no_print">
               <div class="btn-group" role="group" aria-label="Button group">
                 <button type="button" onclick="window.print()" class="btn btn-sm btn-dark">Print</button>
                 <a href="{{url('/dashboard/income/pdf')}}"

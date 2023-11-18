@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{asset('contents/admin')}}/css/style.css">
 
     <script src="{{asset('contents/admin')}}/js/datatables.min.js"></script>
-   
+
   </head>
   <body>
     <header>
@@ -35,12 +35,12 @@
                 </div>
                 <div class="clr"></div>
             </div>
-        </div>  
+        </div>
     </header>
     <section>
         <div class="container-fluid content_part">
             <div class="row">
-                <div class="col-md-2 sidebar_part">
+                <div class="col-md-2 sidebar_part no_print">
                     <div class="user_part">
                         <img class="" src="{{asset('contents/admin')}}/images/avatar.png" alt="avatar"/>
                         <h5>{{Auth::user()->name}}</h5>
@@ -58,12 +58,12 @@
                             <li><a href="{{url('dashboard/expense')}}"><i class="fas fa-coins"></i>Expense</a></li>
                             <li><a href="#"><i class="fas fa-file-alt"></i>Reports</a></li>
                             <li><a href="#"><i class="fas fa-trash"></i>Recycle Bin</a></li>
-                           
-                        
 
-                            
+
+
+
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();"> <i class="fas fa-sign-out-alt"></i> Logout</a> </li>
-   
+
 
                         </ul>
                         <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -77,7 +77,7 @@
                             <div class="bread">
                                 <ul>
                                     <li><a href=""><i class="fas fa-home"></i>Home</a></li>
-                                    <li><a href=""><i class="fas fa-angle-double-right"></i>Dashboard</a></li>                             
+                                    <li><a href=""><i class="fas fa-angle-double-right"></i>Dashboard</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -99,15 +99,15 @@
         </div>
     </footer>
     <script src="{{asset('contents/admin')}}/js/jquery-3.6.0.min.js"></script>
-    
+
     <script src="{{asset('contents/admin')}}/js/bootstrap.bundle.min.js"></script>
-    
+
     <script src="{{asset('contents/admin')}}/js/bootstrap-datepicker.js"></script>
- 
+
 
 
     <script src="{{asset('contents/admin')}}/js/custom.js"></script>
 
-   
+
   </body>
 </html>
