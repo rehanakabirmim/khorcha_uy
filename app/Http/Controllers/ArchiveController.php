@@ -18,4 +18,8 @@ class ArchiveController extends Controller
         return view('admin.archive.index');
 
     }
+    public function new(){
+        return view('admin.archive.index');
+
+    }
 }
