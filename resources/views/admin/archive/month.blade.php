@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('content')
+@section('main-content')
 @php
   $year=date('Y',strtotime($month_name));
   $month=date('m',strtotime($month_name));

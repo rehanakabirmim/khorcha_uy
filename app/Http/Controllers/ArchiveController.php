@@ -18,8 +18,8 @@ class ArchiveController extends Controller
         return view('admin.archive.index');
 
     }
-    public function month(){
-        return view('admin.archive.month');
-
-    }
+    public function month($month){
+        $month_name=$month;
+        return view('admin.archive.month',compact('month_name'));
+      }
 }

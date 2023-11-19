@@ -9,7 +9,7 @@ use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\ExpenseCategoryController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ArchiveController;
-
+use App\Http\Controllers\ManageController;
 use App\Http\Controllers\RecycleController ;
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +28,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Admin panel Controller
+//Admin user panel Controller
 Route::get('/dashboard',[AdminController::class,'index']);
 
 Route::get('/dashboard/user',[UserController::class,'index']);
@@ -40,6 +40,19 @@ Route::post('/dashboard/user/update',[UserController::class,'update']);
 Route::post('/dashboard/user/softdelete',[UserController::class,'softdelete']);
 Route::post('/dashboard/user/restore',[UserController::class,'restore']);
 Route::post('/dashboard/user/delete',[UserController::class,'delete']);
+
+//Manage
+Route::get('/dashboard/manage',[ManageController::class,'index']);
+Route::get('/dashboard/manage/basic',[ManageController::class,'basic']);
+Route::post('/dashboard/manage/basic/update',[ManageController::class,'basic_update']);
+Route::get('/dashboard/manage/social',[ManageController::class,'social']);
+Route::post('/dashboard/manage/social/update',[ManageController::class,'social_update']);
+Route::get('/dashboard/manage/contact',[ManageController::class,'contact']);
+Route::post('/dashboard/manage/contact/update',[ManageController::class,'contact_update']);
+
+
+
+
 
 //Income
 Route::get('/dashboard/income',[IncomeController::class,'index']);
@@ -95,7 +108,7 @@ Route::get('/dashbaord/report/current/month',[ReportController::class,'current_m
 
 //Archive
 Route::get('/dashbaord/archive',[ArchiveController::class,'index']);
-Route::get('/dashbaord/archive/month',[ArchiveController::class,'month']);
+Route::get('/dashbaord/archive/{month}',[ArchiveController::class,'month']);
 
 //RecycleBin
 Route::get('/dashbaord/recycle',[RecycleController::class,'index']);
