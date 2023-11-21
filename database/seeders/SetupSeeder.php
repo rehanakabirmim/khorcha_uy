@@ -35,6 +35,15 @@ class SetupSeeder extends Seeder
             'created_at' =>Carbon::now()->toDateTimeString(),
         ]);
 
+         //social media table data seed
+        DB::table('social_media')->insert([
+        'sm_facebook' => 'www.facebook.com',
+        'sm_twitter' => '#',
+        'sm_creator' => 1,
+        'sm_slug' => 'SM'.uniqid(20),
+        'created_at' => Carbon::now()->toDateTimeString(),
+    ]);
+
         //contact information table data seed
         DB::table('contact_information')->insert([
             'ci_phone1' =>'01795913294',

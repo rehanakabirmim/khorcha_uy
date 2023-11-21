@@ -129,6 +129,42 @@ body{
     margin-right: 5px;
 }
 
+.menu ul li ul{
+    position: relative;
+    display: none;
+    background-color:#252c34!important;
+  }
+
+  .menu ul li ul li a{
+    background-color:#252c34;
+  }
+
+  .menu ul li:hover ul{
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .menu ul li:hover ul li a{
+    background-color:#252c34!important;
+  }
+
+  .menu ul li ul li a{
+    color: #ccc;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      line-height: 35px;
+    border-top: none;
+      display: block;
+      padding-left: 30px;
+      transition: all linear 0.3s;
+  }
+
+  .menu ul li ul li:hover a{
+    color: #0d6efd;
+  }
+
 
 
 .breadcumb_part{

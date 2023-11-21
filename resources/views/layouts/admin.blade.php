@@ -52,10 +52,30 @@
                             @if(Auth::user()->role=='1')
                             <li><a href="{{url('dashboard/user')}}"><i class="fas fa-user-circle"></i> Users</a></li>
                             @endif
-                            @if(Auth::user()->role<=3)
-                            <li><a href="{{url('dashboard/income')}}"><i class="fas fa-wallet"></i> Income</a></li>
-                            @endif
-                            <li><a href="{{url('dashboard/expense')}}"><i class="fas fa-coins"></i>Expense</a></li>
+                            <li><a href="{{url('dashboard/user')}}"><i class="fas fa-cogs"></i> Manage</a>
+                                <ul>
+                                  <li><a href="{{url('dashboard/manage/basic')}}">Basic Information</a><li>
+                                  <li><a href="{{url('dashboard/manage/social')}}">Social Media</a><li>
+                                  <li><a href="{{url('dashboard/manage/contact')}}">Contact Information</a><li>
+                                </ul>
+                              </li>
+                              @if(Auth::user()->role<='2')
+                              <li><a href="{{url('dashboard/income')}}"><i class="fas fa-wallet"></i> Income</a>
+                                <ul>
+                                  <li><a href="{{url('dashboard/income')}}">All Income</a><li>
+                                  <li><a href="{{url('dashboard/income/add')}}">Add Income</a><li>
+                                  <li><a href="{{url('dashboard/income/category')}}">Income Category</a><li>
+                                </ul>
+                              </li>
+                              @endif
+                              <li><a href="{{url('dashboard/expense')}}"><i class="fas fa-coins"></i> Expense</a>
+                                <ul>
+                                  <li><a href="{{url('dashboard/expense')}}">All Expense</a><li>
+                                  <li><a href="{{url('dashboard/expense/add')}}">Add Expense</a><li>
+                                  <li><a href="{{url('dashboard/expense/category')}}">Expense Category</a><li>
+                                </ul>
+                              </li>
+                              <li><a href="{{url('dashbaord/archive')}}"><i class="fas fa-box"></i> Archive</a></li>
                             <li><a href="#"><i class="fas fa-file-alt"></i>Reports</a></li>
                             <li><a href="#"><i class="fas fa-trash"></i>Recycle Bin</a></li>
 
