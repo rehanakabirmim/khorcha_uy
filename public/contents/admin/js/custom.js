@@ -55,15 +55,27 @@ $(document).ready(function() {
       "info": true,
       "autoWidth": false
     });
-    $('#summary').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "order": [[0,'asc']],
-      "info": true,
-      "autoWidth": false
-    });
+    // $('#summary').DataTable({
+    //   "paging": true,
+    //   "lengthChange": false,
+    //   "searching": false,
+    //   "ordering": true,
+    //   "order": [[0,'asc']],
+    //   "info": true,
+    //   "autoWidth": false
+    // });
+//   });
+
+$('#inexsummary').DataTable({
+    "paging": true,
+    "lengthChange": false,
+    "searching": false,
+    "ordering": true,
+    "info": true,
+    "autoWidth": false,
+    "order": [[0,'desc']],
+});
+
   });
 
 
@@ -81,7 +93,6 @@ $(document).ready(function() {
               todayHighlight: true
          });
 });
-
 
 
 

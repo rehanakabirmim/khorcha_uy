@@ -105,6 +105,7 @@ Route::post('/dashboard/expense/category/delete',[ExpenseCategoryController::cla
 Route::get('/dashbaord/report',[ReportController::class,'index']);
 Route::get('/dashbaord/report/summary',[ReportController::class,'summary']);
 Route::get('/dashbaord/report/current/month',[ReportController::class,'current_month']);
+Route::get('dashboard/report/search', [ReportController::class, 'search']);
 
 //Archive
 Route::get('/dashbaord/archive',[ArchiveController::class,'index']);

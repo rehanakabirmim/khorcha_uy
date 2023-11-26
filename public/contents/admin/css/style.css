@@ -331,6 +331,17 @@ span.req_star{
 
 }
 
+.search_btn{
+
+}
+
+.mar_left_0{
+  margin-left: 0px!important;
+}
+
+.pad_left_0{
+  padding-left: 0px!important;
+}
 
 
 @media print {
