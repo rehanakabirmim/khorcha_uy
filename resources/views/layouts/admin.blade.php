@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{asset('contents/admin')}}/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('contents/admin')}}/css/all.min.css">
     <link rel="stylesheet" href="{{asset('contents/admin')}}/css/datatables.min.css">
-    <link rel="stylesheet" href="{{asset('contents/admin')}}/css/datepicker.css">
+    <link rel="stylesheet" href="{{asset('contents/admin')}}/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="{{asset('contents/admin')}}/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>

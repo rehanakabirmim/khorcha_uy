@@ -92,6 +92,11 @@ $('#inexsummary').DataTable({
               format: 'yyyy-mm-dd',
               todayHighlight: true
          });
+         $('#endDate').datepicker({
+              autoclose: true,
+              format: 'yyyy-mm-dd',
+              todayHighlight: true
+         });
 });
 
 
